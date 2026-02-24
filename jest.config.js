@@ -1,5 +1,5 @@
 module.exports = {
-  preset: "ts-jest",                    // use TypeScript with Jest
-  testEnvironment: "node",              // we are testing Node.js
-  setupFilesAfterEnv: ["<rootDir>/test/jest.setup.ts"],  // run this before every test
+  preset: "ts-jest",                    // so it works with TS
+  testEnvironment: "node",              // backend testing
+  setupFilesAfterEnv: ["<rootDir>/test/jest.setup.ts"],  // run this first (setup db etc)
 };

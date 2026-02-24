@@ -1,15 +1,15 @@
-// This file connects our app to Firebase Firestore (our database)
+// firebase.ts - connect to firestore (dont commit this lol)
 
-import { initializeApp, cert, ServiceAccount } from "firebase-admin/app";   // import tools to start Firebase
-import { getFirestore, Firestore } from "firebase-admin/firestore";       // import Firestore database
+import { initializeApp, cert, ServiceAccount } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
-// Load our secret service account key (never share this file!)
+// secret service account key (NEVER push this to github!!!)
 import * as serviceAccount from "../../firebase-service-account.json";
 
-initializeApp({                                 // start Firebase with our secret key
-  credential: cert(serviceAccount as ServiceAccount),
+initializeApp({
+  credential: cert(serviceAccount as ServiceAccount), // cast JSON to ServiceAccount type
 });
 
-const db: Firestore = getFirestore();           // create database object we will use everywhere
+const db = getFirestore(); // db object we use everywhere
 
-export { db };                                  // make db available to other files
+export { db }; // make it available
